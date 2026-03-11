@@ -1,0 +1,11 @@
+{
+    "max_requests": 10,
+    "window_seconds": 10,
+    "algorithm": "fixed_window",
+    "per_client_limits": {
+        "client_vip": {
+            "max_requests": 20,
+            "window_seconds": 10
+        }
+    }
+}
