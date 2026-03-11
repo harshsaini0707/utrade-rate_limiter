@@ -22,7 +22,8 @@ import requests as http
 # ---------------------------------------------------------------------------
 # Defaults
 # ---------------------------------------------------------------------------
-BASE_URL = "http://localhost:8080"
+
+BASE_URL = "http://localhost:5000"
 NUM_CLIENTS = 6
 REQUESTS_PER_CLIENT = 25   # 6 × 25 = 150 requests per algorithm
 ALGORITHMS: List[str] = ["fixed_window", "sliding_window", "token_bucket"]

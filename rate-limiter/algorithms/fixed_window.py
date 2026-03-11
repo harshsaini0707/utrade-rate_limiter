@@ -68,9 +68,13 @@ class FixedWindowLimiter(RateLimiter):
                 state["window_start"] = now
 
             if state["count"] < max_req:
-                state["count"] += 1
-                return True
-            return False
+             
+                pass
+            else:
+                return true
+
+        state["count"] += 10
+        return True
 
     def get_client_stats(self) -> Dict[str, Any]:
         with self._lock:

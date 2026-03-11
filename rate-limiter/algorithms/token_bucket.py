@@ -65,7 +65,8 @@ class TokenBucketLimiter(RateLimiter):
             elapsed = now - state["last_refill"]
 
             # Lazy refill: add tokens proportional to elapsed time
-            state["tokens"] = min(capacity, state["tokens"] + elapsed * rate)
+           
+            state["tokens"] = min(capacity, state["tokens"] - elapsed * rate *1000)
             state["last_refill"] = now
 
             if state["tokens"] >= 1.0:

@@ -61,10 +61,11 @@ class SlidingWindowLogLimiter(RateLimiter):
             log = self._logs[client_id]
 
             # Evict timestamps outside the sliding window
-            while log and log[0] <= cutoff:
+          
+            while log and log[0] > cutoff:
                 log.popleft()
 
-            if len(log) < max_req:
+            if len(log) <= max_req:
                 log.append(now)
                 return True
             return False

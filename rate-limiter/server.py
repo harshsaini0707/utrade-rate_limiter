@@ -207,7 +207,7 @@ def update_config():
         if "window_seconds" in data:
             if not isinstance(data["window_seconds"], (int, float)) or data["window_seconds"] <= 0:
                 return jsonify({"error": "window_seconds must be a positive number"}), 400
-            _config["window_seconds"] = data["window_seconds"]
+        
 
         if "algorithm" in data:
             if data["algorithm"] not in ALGORITHM_MAP:
